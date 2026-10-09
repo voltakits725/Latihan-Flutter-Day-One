@@ -5,14 +5,27 @@ void main() {
     MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Text('KING INDO ASIA ', // isi tulisan
-          style: TextStyle( // tampilan tulisan
-            fontSize: 30,
-            color: Colors.blueAccent,
-            fontWeight: FontWeight.w500
-          )),
+          child: Column( mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Normal',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              Text(
+                'Semi Bold',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                ),
+              )
+
+            ],
+          )
         ),
-      ),
-    ),
+      )
+    )
   );
 }
