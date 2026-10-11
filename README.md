@@ -3,7 +3,7 @@
 Tugas Matkul Aplikasi Mobile.
 Aplikasi antarmuka buah sederhana untuk mengimplementasikan dasar-dasar widget di Flutter.
 
-## 📚 Materi yang Diterapkan
+## Materi yang Diterapkan
 
 * **Custom Widget:** Memisahkan UI menjadi komponen `StatelessWidget` tersendiri agar kode tidak berantakan (*Clean Code*).
 
