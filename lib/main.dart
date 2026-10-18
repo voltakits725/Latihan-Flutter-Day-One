@@ -1,102 +1,319 @@
 import 'package:flutter/material.dart';
-
 void main() {
-  runApp(const AplikasiSederhana());
+  runApp(const MyApp());
+      
 }
 
-class AplikasiSederhana extends StatelessWidget {
-  const AplikasiSederhana({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Buah Anjay'), 
-          backgroundColor: Colors.green
+        appBar: AppBar(title: const Text('Aplikasi Pertamaku'), backgroundColor: Colors.lightBlue,),
+        body: Center(
+          child: const RichTextWidget(),
         ),
-        body: const Center(child: ProductWidget(),)
       ),
     );
-
   }
 }
 
-class ProductWidget extends StatelessWidget {
-  const ProductWidget({super.key});
+// latihan 1: Text Style Dasar, font size dan color
+class BasicTextWidget extends StatelessWidget {
+  const BasicTextWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+   
+    return const Text(
+      'Hallo KING INDO ASEAN',
+      style: TextStyle(
+        fontSize: 20,
+        color: Colors.redAccent
+      ),
+    );
+  }
+}
+
+
+// --- Latihan 2: Font, Weight, Dan Style
+class FontTextWidget extends StatelessWidget {
+  const FontTextWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Teks Normal',
+          style: TextStyle(
+            fontSize: 15,
+          ),
+        ),
+
+        Text(
+          'Bold',
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+
+        Text(
+          'Semi Bold w600',
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+
+        Text(
+          'Italic',
+          style: TextStyle(
+            fontSize: 20,
+            fontStyle: FontStyle.italic,
+          ),
+        ),
+
+      ],
+    );
+  }
+}
+
+// latihan 3: Spacing(word spacing, letter spacing, height)
+class SpacingTextWidget extends StatelessWidget {
+  const SpacingTextWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Teks Normal',
+          style: TextStyle(
+            fontSize: 15,
+          ),
+        ),
+        SizedBox(height: 20),
+        Text(
+          'Letter Spacing',
+          style: TextStyle(
+            fontSize: 15,
+            letterSpacing: 5,
+          ),
+        ),
+        SizedBox(height: 20),
+
+        Text(
+          'Word Spacing',
+          style: TextStyle(
+            fontSize: 15,
+            wordSpacing: 10,
+          ),
+        ),
+        SizedBox(height: 20),
+        Text(
+          'Line 1\nLine 2\nLine 3',
+          style: TextStyle(
+            fontSize: 15,
+            height: 2
+          ),
+        ),
+      ],
+    );
+  }
+}
+// latihan 4: Decoration dan shadow(underline, line trough)
+class DecorationTextWidget extends StatelessWidget {
+  const DecorationTextWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
 
-    const Widget namaBuah = Text(
-      'Apel Hijau Premium',
-      textAlign: TextAlign.center,
+    const Widget teksUnderline = Text(
+      'Underline',
       style: TextStyle(
-        fontSize: 28,
-        fontWeight: FontWeight.bold,
+        fontSize: 15,
+        decoration: TextDecoration.underline,
       ),
     );
 
-    const Widget hargaBuah = Text(
-      'Rp. 100.000.000',
-      style: TextStyle(
-        fontSize: 16,
-        color: Colors.redAccent,
-        decoration: TextDecoration.lineThrough,
-      ),
+    const Widget teksLineTrough = Text(
+        'Contoh Line trough',
+        style: TextStyle(
+          fontSize: 15,
+          decoration: TextDecoration.lineThrough,
+        ),
+      );
+
+    const Widget TEKSBACKGROUND = Text(
+          'Background',
+          style: TextStyle(
+            fontSize: 20,
+            backgroundColor: Colors.lightBlueAccent, // Ngasih blok warna di belakang teks
+          ),
+        );
+
+    const Widget TeksShadow = Text(
+          'Text Shadow',
+          style: TextStyle(
+            fontSize: 30,
+            shadows: [
+              Shadow(
+                offset: Offset(10, 10), 
+                blurRadius: 15, 
+              ),
+            ],
+          ),
+        );
+
+        const Widget jarakTinggi = SizedBox(height: 20);
+
+    
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      teksUnderline,
+      teksLineTrough,
+      TEKSBACKGROUND,
+      TeksShadow,
+      jarakTinggi,
+      ],
+    );
+  }
+}
+
+// latihan 5: Text alignment
+// --- PRAKTIK 5: TEXT ALIGNMENT ---
+class AlignmentTextWidget extends StatelessWidget {
+  const AlignmentTextWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // 1. KITA BIKIN TEKS DENGAN BERBAGAI ALIGNMENT
+    const Widget rataKiri = Text(
+      'Left',
+      textAlign: TextAlign.left, // Teks nempel ke garis kiri[cite: 20]
     );
 
-    const Widget discountPrice = Text(
-      'Rp 25.000 / kg',
-      style: TextStyle(
-        fontSize: 22,
-        fontWeight: FontWeight.w600,
-        color: Colors.green,
-        letterSpacing: 2, 
-      ),
+    const Widget rataTengah = Text(
+      'Center',
+      textAlign: TextAlign.center, // Teks pas di tengah-tengah wadah[cite: 20]
     );
 
-    const Widget deskripsiBuah = Text(
-      'Apel Khas Ngawiii',
-      textAlign: TextAlign.justify, 
-      style: TextStyle(
-        fontSize: 16,
-        height: 1.5, 
-      ),
+    const Widget rataKanan = Text(
+      'Right',
+      textAlign: TextAlign.right, // Teks nempel ke garis kanan[cite: 20]
     );
 
-     const Widget tinggiKecil = SizedBox(height: 5);
-     const Widget tinggiBesar = SizedBox(height: 20);
+    // Justify sangat berguna buat kalimat panjang biar pinggiran kiri-kanannya lurus
+    const Widget rataKiriKanan = Text(
+      'Justify: Flutter adalah framework untuk membuat aplikasi menggunakan satu codebase.',
+      textAlign: TextAlign.justify, // Rata kiri-kanan[cite: 20, 21]
+    );
 
-   
+    const Widget spasi = SizedBox(height: 15);
+
+    // Kumpulkan semua teks ke dalam satu Column
+    const Widget susunanTeks = Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch, 
+      children: [
+        rataKiri,
+        spasi,
+        rataTengah,
+        spasi,
+        rataKanan,
+        spasi,
+        rataKiriKanan,
+      ],
+    );
+
+    // 2. KITA RETURN WADAH CONTAINER-NYA
     return Container(
-      width: 320, 
-      padding: const EdgeInsets.all(20),
+      // Lebar double.infinity ini kunci biar textAlign bisa beraksi[cite: 20]
+      width: double.infinity, 
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.green, width: 2), 
+        // Kita kasih garis kotak hitam biar kelihatan batas ruang teksnya[cite: 20]
+        border: Border.all(), 
       ),
-      child: Column(
-        
-        mainAxisSize: MainAxisSize.min,
-        
-        crossAxisAlignment: CrossAxisAlignment.center,
-        
+      child: susunanTeks, 
+    );
+  }
+}
+
+// --- PRAKTIK 6: MAXLINES & OVERFLOW ---[cite: 21, 22]
+class OverflowTextWidget extends StatelessWidget {
+  const OverflowTextWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // 1. KITA BIKIN TEKS PANJANGNYA DULU
+    const Widget teksPanjang = Text(
+      'Flutter adalah framework UI dari Google '
+      'yang dapat digunakan untuk membuat aplikasi '
+      'Android, iOS, Web dan Desktop.',
+      maxLines: 2, // Membatasi tulisan hanya boleh tampil maksimal 2 baris
+      overflow: TextOverflow.clip, // Sisa teks yang kepanjangan akan diganti jadi "..."
+    );
+
+    // 2. KITA RETURN WADAHNYA
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        border: Border.all(), // Garis pembatas[cite: 22]
+      ),
+      child: teksPanjang, // Panggil teksnya di sini
+    );
+  }
+}
+
+// --- PRAKTIK 7: RICHTEXT & TEXTSPAN ---[cite: 23, 24]
+class RichTextWidget extends StatelessWidget {
+  const RichTextWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // Lu minta langsung di-return, jadi kodenya persis kayak gini
+    return  RichText(
+      text: TextSpan(
+        // Ini gaya default (dasar) untuk semua teks di dalam TextSpan ini
+        style: TextStyle(
+          fontSize: 20,
+          color: Colors.black,
+        ),
         children: [
-          namaBuah,
-          tinggiBesar,
-          hargaBuah,
-          tinggiKecil,
-          discountPrice,
-          tinggiBesar,
-          deskripsiBuah,
+          TextSpan(
+            text: 'Saya sedang belajar ', // Mengikuti gaya default (hitam, normal)
+          ),
+          TextSpan(
+            text: 'Flutter',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.blue, // Kata "Flutter" ditimpa jadi tebal dan biru[cite: 24, 25]
+            ),
+          ),
+          TextSpan(
+            text: ' dan ', // Balik ke gaya default lagi[cite: 24]
+          ),
+          TextSpan(
+            text: 'Dart',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.green, // Kata "Dart" ditimpa jadi tebal dan hijau[cite: 24, 25]
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
-
-
-
