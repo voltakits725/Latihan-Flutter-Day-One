@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/card.dart';
 
 void main(){
   runApp(MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp( title: 'Pertemuan 4',
       debugShowCheckedModeBanner: false,
       
-      home: MyProfil(),
+      home: CardImage(),
     );
   }
 }
