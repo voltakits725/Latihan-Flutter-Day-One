@@ -10,138 +10,233 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( title: 'Pertemuan 4',
+    return MaterialApp( title: 'Aplikasi Mahasiswa',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+        ),
+      ),
+
       
-      home: CardImage(),
+      home: ProfilPage(),
+      
     );
+    
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+class ProfilPage extends StatelessWidget {
+  const ProfilPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Belajar Flutter'),
-      backgroundColor: Colors.lightBlue,
+      appBar: AppBar(title: const Text('Dashboard Mahasiswa'),
+      backgroundColor: Colors.amberAccent,
+      centerTitle: true,
       ),
-      body: Center(
+      body: 
+    
+      Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
+             Icon(Icons.person, size: 80, color: Colors.blueAccent,),
+
+              Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(18),
+                  color: Colors.blue
+                ),
+
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    
+                    const Text(
+                      'Nama: Rafly Kurniawan',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.white70
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'NIM: 1124160165',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.white70
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text('Semester: 5', 
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic,
+                          color: Colors.white70
+
+                        ),
+                      ),
+                        SizedBox(width: 8),
+                        Text(
+                          'Jurusan: Software Engineering',
+                          style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic,
+                          color: Colors.white70
+                        ),
+                      ),
+                      SizedBox(width: 4,),
+                      Icon(Icons.code, size: 30,)
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+      ),
+    );
+  }
+}
+
+
+// class MyHomePage extends StatelessWidget {
+//   const MyHomePage({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text('Belajar Flutter'),
+//       backgroundColor: Colors.lightBlue,
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
       
-            Text(
-              'KING INDO',
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
-                fontStyle: FontStyle.italic,
-                color: Colors.redAccent
-              ),
-            ),
-            SizedBox(height: 12,),
-            Text(
-              'Asap Karhutla semakin tebal, sehingga jarak pandang hanya sebatas mengagumi',
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-                color: Colors.pinkAccent
-              ),
-            ),
-            SizedBox(height: 12),
-            Text(
-              'Teori Gravitasi Sir Isaac Newton akan jadi sia-sia ketika melihat matamu saja seluruh duniaku jatuh disana. ~~ Rafly ~~',
-              maxLines: 2,
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-                color: Colors.pinkAccent,
+//             Text(
+//               'KING INDO',
+//               style: TextStyle(
+//                 fontSize: 15,
+//                 fontWeight: FontWeight.w500,
+//                 fontStyle: FontStyle.italic,
+//                 color: Colors.redAccent
+//               ),
+//             ),
+//             SizedBox(height: 12,),
+//             Text(
+//               'Asap Karhutla semakin tebal, sehingga jarak pandang hanya sebatas mengagumi',
+//               style: TextStyle(
+//                 fontSize: 15,
+//                 fontWeight: FontWeight.w600,
+//                 color: Colors.pinkAccent
+//               ),
+//             ),
+//             SizedBox(height: 12),
+//             Text(
+//               'Teori Gravitasi Sir Isaac Newton akan jadi sia-sia ketika melihat matamu saja seluruh duniaku jatuh disana. ~~ Rafly ~~',
+//               maxLines: 2,
+//               style: TextStyle(
+//                 fontSize: 15,
+//                 fontWeight: FontWeight.w600,
+//                 color: Colors.pinkAccent,
                 
-              ),
-            ),
+//               ),
+//             ),
 
-          ],
-        ),
-      ),
-    );
-  }
-}
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class MyProfil extends StatelessWidget {
-  const MyProfil({super.key});
+// class MyProfil extends StatelessWidget {
+//   const MyProfil({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('My Profil'),
-      backgroundColor: Colors.blue,
-      leading: Icon(Icons.man_2_sharp),
-      centerTitle: true,
-      actions: [
-        IconButton(
-          onPressed: (){
-          print('HIDUP JOKOWIIIII');
-        }, icon: Icon(Icons.notification_add_sharp),
-        ),
-        Icon(Icons.search),
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text('My Profil'),
+//       backgroundColor: Colors.blue,
+//       leading: Icon(Icons.man_2_sharp),
+//       centerTitle: true,
+//       actions: [
+//         IconButton(
+//           onPressed: (){
+//           print('HIDUP JOKOWIIIII');
+//         }, icon: Icon(Icons.notification_add_sharp),
+//         ),
+//         Icon(Icons.search),
         
-        Icon(Icons.mail)
-      ],
-      ),
-      body: Center(
-       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.person, size: 60, color: Colors.red,),
-          Text(
-            'Nama: Rafly Kurniawan',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w600,
-              color: Colors.blue,
-              fontStyle: FontStyle.italic,
-              ),
-            ),
-            SizedBox(height: 8),
-            Text(
-              'NIM: 1124160165',
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-                fontStyle: FontStyle.italic,
-                color: Colors.blue,
-                decoration: TextDecoration.lineThrough
-              ),
-            ),
-            SizedBox(height: 7),
-            Text(
-              'Teori Gravitasi Sir Isaac Newton akan jadi sia-sia ketika melihat matamu saja seluruh duniaku jatuh disana. ~~ Rafly ~~',
-              maxLines: 2,
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-                color: Colors.pinkAccent,
+//         Icon(Icons.mail)
+//       ],
+//       ),
+//       body: Center(
+//        child: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           Icon(Icons.person, size: 60, color: Colors.red,),
+//           Text(
+//             'Nama: Rafly Kurniawan',
+//             style: TextStyle(
+//               fontSize: 15,
+//               fontWeight: FontWeight.w600,
+//               color: Colors.blue,
+//               fontStyle: FontStyle.italic,
+//               ),
+//             ),
+//             SizedBox(height: 8),
+//             Text(
+//               'NIM: 1124160165',
+//               style: TextStyle(
+//                 fontSize: 15,
+//                 fontWeight: FontWeight.w600,
+//                 fontStyle: FontStyle.italic,
+//                 color: Colors.blue,
+//                 decoration: TextDecoration.lineThrough
+//               ),
+//             ),
+//             SizedBox(height: 7),
+//             Text(
+//               'Teori Gravitasi Sir Isaac Newton akan jadi sia-sia ketika melihat matamu saja seluruh duniaku jatuh disana. ~~ Rafly ~~',
+//               maxLines: 2,
+//               style: TextStyle(
+//                 fontSize: 15,
+//                 fontWeight: FontWeight.w600,
+//                 color: Colors.pinkAccent,
                 
-              ),
-            ),
-            SizedBox(height: 7),
-            Text(
-              'Asap Karhutla semakin tebal, sehingga jarak pandang hanya sebatas mengagumi',
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-                color: Colors.pinkAccent
-              ),
-            ),
+//               ),
+//             ),
+//             SizedBox(height: 7),
+//             Text(
+//               'Asap Karhutla semakin tebal, sehingga jarak pandang hanya sebatas mengagumi',
+//               style: TextStyle(
+//                 fontSize: 15,
+//                 fontWeight: FontWeight.w600,
+//                 color: Colors.pinkAccent
+//               ),
+//             ),
 
-          ],
-        ),
-      )
-    );
-  }
-}
+//           ],
+//         ),
+//       )
+//     );
+//   }
+// }
 
 // class MyWidget extends StatelessWidget {
 //   const MyWidget({super.key});
