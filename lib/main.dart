@@ -33,7 +33,7 @@ class ProfilPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Dashboard Mahasiswa'),
-      backgroundColor: Colors.amberAccent,
+      backgroundColor: Colors.blue,
       centerTitle: true,
       ),
       body: 
