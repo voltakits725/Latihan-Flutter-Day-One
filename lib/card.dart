@@ -15,32 +15,38 @@ class MyCard extends StatelessWidget {
       centerTitle: true,
       leading: Icon(Icons.menu_open_rounded),
       ),
-      body: Card(
-        elevation: 4, // ngatur tebal shadow
-        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8), // jarak luar card
-        
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),// ngatur lengkungan sudut (border radius)
-        ),
-        child: ListTile(
-          contentPadding: const EdgeInsets.all(16),
-          leading: const CircleAvatar(
-            backgroundColor: Colors.lightBlue,
-            child: Icon(Icons.code, color: Colors.white,),
-          ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Card(
+            elevation: 4, // ngatur tebal shadow
+            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8), // jarak luar card
+            
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),// ngatur lengkungan sudut (border radius)
+            ),
+            child: ListTile(
+              contentPadding: const EdgeInsets.all(16),
+              leading: const CircleAvatar(
+                backgroundColor: Colors.lightBlue,
+                child: Icon(Icons.code, color: Colors.white,),
+              ),
 
-          title: const Text(
-            'Rafly',
-            style: TextStyle(fontWeight: FontWeight.bold),
+              title: const Text(
+                'Rafly',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              
+              subtitle: const Text('Fullstack Mobile Developer'),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16,),
+              onTap: () {
+                // Masukin logic routing atau aksi di sini
+                print('Card di-klik!');
+              },
+            ),
           ),
-          
-          subtitle: const Text('Fullstack Mobile Developer'),
-          trailing: const Icon(Icons.arrow_forward_ios, size: 16,),
-          onTap: () {
-            // Masukin logic routing atau aksi di sini
-            print('Card di-klik!');
-          },
-        ),
+          Card()
+        ],
       )
     );
   }
