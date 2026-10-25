@@ -1,0 +1,10 @@
+1. Menggunakan Padding (seperti kodemu di gambar pertama)
+- Kanvas Bebas: Widget Padding bertugas murni memberikan jarak aman (sebanyak 20) di dalam Card. Karena di dalamnya kamu menggunakan Column, kamu bebas mengatur isi kartu sesukamu.   
+- Susunan Vertikal: Kontenmu tersusun dari atas ke bawah, mulai dari Icon berukuran 60, diberi jarak SizedBox, lalu ditutup dengan Text namamu.   
+- Kapan Dipakai: Cocok digunakan ketika kamu ingin membuat komponen yang besar, menonjol, rata tengah, atau memiliki tata letak kustom (seperti bagian header foto profil utama).
+
+2. Menggunakan ListTile (seperti kodemu di gambar kedua)
+- Cetakan Instan: ListTile adalah tata letak terstruktur bawaan Flutter.   
+- Susunan Horizontal: Konten otomatis ditata berjajar dari kiri ke kanan dengan presisi: CircleAvatar diposisikan di slot leading (kiri), teks nama dan pekerjaan di slot title dan subtitle (tengah), dan ikon panah di trailing (kanan).   
+- Fitur Praktis: ListTile sudah memiliki properti contentPadding bawaan untuk mengatur jarak pinggir. Selain itu, ListTile juga memiliki properti onTap yang membuat baris tersebut bisa langsung diklik sebagai tombol.   
+- Kapan Dipakai: Sangat cocok untuk membuat menu pengaturan, daftar kontak, atau baris informasi (list) yang padat dan rapi.
