@@ -1,6 +1,6 @@
-# Portfolio & Tech Stack App 🚀
+# Aplikasi Mahasiswa 
 
-Aplikasi portofolio interaktif berbasis Flutter yang menampilkan detail profil, halaman tentang saya, dan katalog tech stack dengan implementasi navigasi dan tema dinamis.
+Aplikasi Mahasiswa interaktif berbasis Flutter yang menampilkan profil, halaman tentang saya, dan katalog tech stack dengan implementasi navigasi dan tema dinamis.
 
 ## 🌟 Fitur Utama
 * **Bottom Navigation Bar:** Navigasi instan antar 3 halaman utama (Profil, Tentang Saya, Tech Stack) tanpa penumpukan layar.
