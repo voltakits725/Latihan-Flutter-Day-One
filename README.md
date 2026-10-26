@@ -72,7 +72,7 @@ class _KerangkaNavigasiState extends State<KerangkaNavigasi> {
   int _selectedIndex = 0;
 
   final List<Widget> _daftarHalaman = [
-    const ProfilPage(), // Pastikan nama class di file import sesuai
+    const ProfilPage(), 
     const AboutMe(),
     const TechStack(),
   ];
